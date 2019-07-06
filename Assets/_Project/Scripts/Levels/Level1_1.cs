@@ -47,11 +47,10 @@ public class Level1_1 : BaseScn {
 
 
     private void CheckResult() {
-        bool result = answers.Any( a => a.selectionId == selectedId );
+        var answer = answers.FirstOrDefault( a => a.selectionId == selectedId );
 
-        Debug.Log( "Result: " + result );
 
-        if( !result ) {
+        if( answer == null ) {
             m_isRestarting = true;
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
@@ -59,6 +58,7 @@ public class Level1_1 : BaseScn {
         }
         else {
             m_isGameOver = true;
+            AudioMng.PlayOneShot( answer.clip );
             StartCoroutine( EndGameDelay() );
         }
     }

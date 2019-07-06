@@ -94,25 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3104768784390618870}
   offset: -1
---- !u!114 &4401685675886141007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3563848245085812405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5dd78381dd5c14db36d8250e7a45c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameMng: {fileID: 0}
-  wallMoveSpd: -2
-  targetY: -1.97
-  wallTrans: {fileID: 2331355714950171169}
-  selectedId: 0
-  correctId: 2
-  heartObj: {fileID: 2356517302223229311}
 --- !u!1 &7846540667241937809
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7846540667241937809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.81, z: 0}
+  m_LocalPosition: {x: 0, y: 4.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3563848245085812404}
@@ -207,6 +188,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1881663313141669584}
   offset: 0
+--- !u!114 &4401685675886141007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563848245085812405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5dd78381dd5c14db36d8250e7a45c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
+  wallMoveSpd: -5
+  targetY: -1.98
+  wallTrans: {fileID: 2331355714950171169}
+  selectedId: 0
+  answers:
+  - selectionId: 2
+    symbolSpr: {fileID: 21300000, guid: b631b7177a6d64c4eae54c4c3de5d9c9, type: 3}
+    clip:
+      clip: {fileID: 8300000, guid: 4da70e38aa098744f9b87335f89b428e, type: 3}
+      volume: 1
+      pitch: 1
+      randomPitch: 0
+      loop: 0
+      minPitch: 0.995
+      maxPitch: 1.05
+  heartObj: {fileID: 2356517302223229311}
 --- !u!1001 &748809664718158716
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public struct SelectionData {
+[Serializable]
+public class SelectionData {
     public int selectionId;
     public Sprite symbolSpr;
-    public AudioClip clip;
+    public Sound clip;
 }

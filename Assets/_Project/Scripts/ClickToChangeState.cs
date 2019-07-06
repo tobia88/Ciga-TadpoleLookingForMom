@@ -10,6 +10,10 @@ public class ClickToChangeState: BaseSelector {
 
     public int endState = 4;
 
+    public bool IsEndState {
+        get { return m_currentState == endState; }
+    }
+
     public int CurrentState {
         get { return m_currentState; }
         set

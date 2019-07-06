@@ -12,6 +12,7 @@ public class Level1_1 : BaseScn {
     [HideInInspector]
     public int selectedId;
     public GameObject heartObj;
+    public bool matchAnimState;
     public Transform selectionGroup;
 
     private bool m_isRestarting;
@@ -51,6 +52,9 @@ public class Level1_1 : BaseScn {
     }
 
     protected override void OnSelectObj(BaseSelector obj) {
+        if( PhaseState != PhaseStates.Playing )
+            return;
+
         if( obj is SelectableObj ) {
             var selector = obj as SelectableObj;
 
@@ -61,10 +65,10 @@ public class Level1_1 : BaseScn {
     }
 
 
-    private void CheckResult() {
+    protected virtual void CheckResult() {
         var answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
 
-        if( answer.isNotAnswer ) {
+        if( CheckMatch( answer )) {
             m_isRestarting = true;
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
@@ -76,6 +80,18 @@ public class Level1_1 : BaseScn {
 
             StartCoroutine( EndGameDelay() );
         }
+    }
+
+    private bool CheckMatch( SelectableObj answer ) {
+        if( answer.isNotAnswer )
+            return false;
+
+        if( matchAnimState ) {
+            var clickToChangeState = heartObj.GetComponent<ClickToChangeState>();
+            return clickToChangeState != null && clickToChangeState.IsEndState;
+        }
+
+        return true;
     }
 
     private IEnumerator EndGameDelay() {

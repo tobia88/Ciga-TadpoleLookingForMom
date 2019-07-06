@@ -498,6 +498,11 @@ PrefabInstance:
       propertyPath: defaultPos
       value: 
       objectReference: {fileID: 4079885866161602734}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: matchAnimState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 819409271618697428, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: m_Sprite

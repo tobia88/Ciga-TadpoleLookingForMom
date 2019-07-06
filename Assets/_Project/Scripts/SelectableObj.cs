@@ -6,15 +6,9 @@ using UnityEngine.EventSystems;
 
 [RequireComponent( typeof( CircleCollider2D ))]
 [ExecuteInEditMode]
-public class SelectableObj: MonoBehaviour{
+public class SelectableObj: BaseSelector {
     [HideInInspector]
     public int id = 0;
     public SelectionData selectionData;
     public bool isNotAnswer;
-
-    void Update() {
-        int layer = LayerMask.NameToLayer( "TouchObject" );
-        if( gameObject.layer != layer )
-            gameObject.layer = layer;
-    }
 }

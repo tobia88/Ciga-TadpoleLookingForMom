@@ -28,12 +28,16 @@ public class GameMng: MonoBehaviour {
 
     void OnEnable() {
         BaseScn.onPhaseStateChanged += OnBaseScnPhaseStateChanged;
+
+        ThemeTransition.onFadeInFinish += OnTransitFadeInFinish;
         ThemeTransition.onFadeOutFinish += OnTransitFadeOutFinish;
     }
 
     void OnDisable() {
         BaseScn.onPhaseStateChanged -= OnBaseScnPhaseStateChanged;
+
         ThemeTransition.onFadeInFinish -= OnTransitFadeInFinish;
+        ThemeTransition.onFadeOutFinish -= OnTransitFadeOutFinish;
     }
 
     void Awake() {
@@ -70,6 +74,7 @@ public class GameMng: MonoBehaviour {
 
             Debug.Log( "Enter next phase" );
             phase++;
+            level = 0;
 
             if( phase >= PhaseData.All.Length ) {
                 Debug.Log( "Game Finished" );

@@ -44,7 +44,7 @@ public class BaseScn: MonoBehaviour {
         InputMng.onSelectObj -= OnSelectObj;
     }
 
-    protected virtual void OnSelectObj( SelectableObj obj ) { }
+    protected virtual void OnSelectObj( BaseSelector obj ) { }
 
     protected virtual void OnChangePhaseStates( PhaseStates phaseState ) {
         m_phaseState = phaseState;

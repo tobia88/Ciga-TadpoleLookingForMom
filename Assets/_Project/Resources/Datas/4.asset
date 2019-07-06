@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a48ab977d7a6c340ae228f9a443cb58, type: 3}
-  m_Name: 1
+  m_Name: 4
   m_EditorClassIdentifier: 
-  phaseId: 1
+  phaseId: 4
   themeSpr: {fileID: 21300000, guid: 7b89242491ff64d4fb762aa8fb787cec, type: 3}
-  scenes:
-  - {fileID: 4401685675886141007, guid: 05cbf246b2e235e408164e7f68aaf961, type: 3}

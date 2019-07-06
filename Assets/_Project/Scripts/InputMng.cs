@@ -4,21 +4,37 @@ using UnityEngine;
 using System;
 
 public class InputMng: MonoBehaviour {
-    public static event Action<SelectableObj> onSelectObj;
+    public static event Action<BaseSelector> onSelectObj;
+    public static event Action<BaseSelector> onClickObj;
+    public int frameIntervalForClick = 10;
     private bool m_mp;
     private Vector3 m_startPos, m_lastPos, m_pos, m_delta;
-    private GameObject m_lastSelectedObj;
+    private int clickTick;
+    private List<Collider2D> m_lastSelectedObjs = new List<Collider2D>();
 
     void Update() {
+        clickTick--;
+
         // Mouse Movement
         if( Input.GetMouseButtonDown( 0 ) ) {
             m_mp = true;
             m_startPos = m_pos = m_lastPos = Input.mousePosition;
+            clickTick = frameIntervalForClick;
         }
         else if (Input.GetMouseButtonUp( 0 ) ){
             m_mp = false;
-            m_lastSelectedObj = null;
-        }
+            // Check if click
+            if( clickTick > 0 && m_lastSelectedObjs != null ) {
+                if( onClickObj != null ) {
+                    foreach( var c in m_lastSelectedObjs ) {
+                        onClickObj( c.GetComponent<BaseSelector>() );
+                    }
+                }
+            }
+
+            m_lastSelectedObjs.Clear();
+            return;
+       }
 
         if( m_mp ) {
             m_lastPos = m_pos;
@@ -26,28 +42,34 @@ public class InputMng: MonoBehaviour {
             m_delta = m_pos - m_lastPos;
 
             var wp = Camera.main.ScreenToWorldPoint( m_pos );
-            var col = Physics2D.OverlapPoint( wp, 1 << LayerMask.NameToLayer( "TouchObject" ));
+            var cols = Physics2D.OverlapPointAll( wp, 1 << LayerMask.NameToLayer( "TouchObject" ));
 
-            if( col != null ) {
+            if( cols != null ) {
+                foreach( var col in cols ) {
+                    Debug.Log( col.name );
+                    if( m_lastSelectedObjs.Contains( col ) ) {
+                        continue;
+                    }
 
-                if( m_lastSelectedObj == col.gameObject )
-                    return;
+                    m_lastSelectedObjs.Add( col );
 
-                m_lastSelectedObj = col.gameObject;
+                    var selectableObj = col.GetComponent<BaseSelector>();
 
-                if( onSelectObj != null )
-                    onSelectObj( m_lastSelectedObj.GetComponent<SelectableObj>() );
+                    if( selectableObj != null ) {
+                        if( onSelectObj != null )
+                            onSelectObj( selectableObj );
+                    }
 
-                Debug.Log( "Touch Something: " + col.gameObject.name );
-            }
-            else {
-                m_lastSelectedObj = null;
+                    Debug.Log( "Touch Something: " + col.gameObject.name );
+                }
+            } else {
+                m_lastSelectedObjs.Clear();
             }
         }
-        
+
         // Debug Hotkeys
         // Speedup
-        Time.timeScale = ( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKey( KeyCode.Alpha1 ) ) ? 2 : 1;
+        Time.timeScale = ( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKey( KeyCode.Alpha1 ) ) ? 4 : 1;
 
         // Skip current level
         if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKeyDown( KeyCode.Alpha2 ) ) {

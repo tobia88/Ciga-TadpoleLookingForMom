@@ -188,12 +188,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  wallMoveSpd: -3
+  wallMoveSpd: -0.5
   targetY: -2.97
   wallTrans: {fileID: 1717557846880146812}
-  defaultId: 0
+  defaultPos: {fileID: 0}
   selectedId: 0
-  answers: []
   heartObj: {fileID: 290497143162684480}
   selectionGroup: {fileID: 234676758123958376}
 --- !u!1 &5210696925201851813
@@ -294,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7126280513818562547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 2.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5210696924444171292}

@@ -34,6 +34,9 @@ public class AudioMng: MonoBehaviour {
     }
 
     public static void Play( Sound _snd, bool _forceReplay = false ) {
+        if( _snd.clip == null )
+            return;
+
         AudioSource src = GetSource( _snd );
 
         if( src.isPlaying && !_forceReplay )
@@ -46,6 +49,9 @@ public class AudioMng: MonoBehaviour {
     }
 
     public static void PlayOneShot( Sound _snd ) {
+        if( _snd.clip == null )
+            return;
+
         AudioSource src = GetSource( _snd );
 
         src.pitch = _snd.GetPitch();
@@ -54,6 +60,9 @@ public class AudioMng: MonoBehaviour {
     }
 
     public static void Fade( Sound _snd, float _volume, float _duration, TweenCallback _callback = null ) {
+        if( _snd.clip == null )
+            return;
+
         AudioSource src = GetSource( _snd );
         src.DOFade( _volume, _duration ).OnComplete( _callback );
     }

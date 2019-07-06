@@ -50,10 +50,14 @@ public class Level1_1 : BaseScn {
         }
     }
 
-    protected override void OnSelectObj(SelectableObj obj) {
-        selectedId = obj.id;
+    protected override void OnSelectObj(BaseSelector obj) {
+        if( obj is SelectableObj ) {
+            var selector = obj as SelectableObj;
 
-        heartObj.transform.position = obj.transform.position;
+            selectedId = selector.id;
+
+            heartObj.transform.position = selector.transform.position;
+        }
     }
 
 
@@ -65,19 +69,17 @@ public class Level1_1 : BaseScn {
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
                      .OnComplete( () => m_isRestarting = false );
-        }
-        else {
+        } else {
             m_isGameOver = true;
 
-            if( answer.selectionData.clip != null )
-                AudioMng.PlayOneShot( answer.selectionData.clip );
+            AudioMng.PlayOneShot( answer.selectionData.clip );
 
             StartCoroutine( EndGameDelay() );
         }
     }
 
     private IEnumerator EndGameDelay() {
-        yield return new WaitForSeconds( 2 );
+        yield return new WaitForSeconds( 5 );
         PhaseState = PhaseStates.End;
     }
 }

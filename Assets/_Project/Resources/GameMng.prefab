@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3a7f5ffd6071f43bfd355fe09576ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frameIntervalForClick: 30
 --- !u!1 &479854031
 GameObject:
   m_ObjectHideFlags: 0

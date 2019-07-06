@@ -5,7 +5,6 @@ using System;
 
 [Serializable]
 public class SelectionData {
-    public int selectionId;
     public Sprite symbolSpr;
     public Sound clip;
 }

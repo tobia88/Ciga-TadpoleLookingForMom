@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &19047947758250978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611590380914625017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c191ee4e0ee3c54a969dfe60dc4dd25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &3723814944746290672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1698875667784594441, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_Name
+      value: Tadpole
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789255261576730304, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031629933186112384, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031629933186112384, guid: 1f43e994291a0c44a974bc5a7110a473,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4211761467620165101, guid: f76d6e1e9da6ed5478ddb19fbfe6f034,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f43e994291a0c44a974bc5a7110a473, type: 3}
+--- !u!1 &2611590380914625017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1698875667784594441, guid: 1f43e994291a0c44a974bc5a7110a473,
+    type: 3}
+  m_PrefabInstance: {fileID: 3723814944746290672}
+  m_PrefabAsset: {fileID: 0}

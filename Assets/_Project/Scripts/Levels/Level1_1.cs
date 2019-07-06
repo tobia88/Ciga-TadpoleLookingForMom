@@ -8,17 +8,28 @@ public class Level1_1 : BaseScn {
     public float wallMoveSpd = -10f;
     public float targetY = -5f;
     public Transform wallTrans;
+    public SelectableObj defaultPos;
     [HideInInspector]
     public int selectedId;
-    public SelectionData[] answers;
     public GameObject heartObj;
+    public Transform selectionGroup;
 
     private bool m_isRestarting;
     private bool m_isGameOver;
     private Vector3 m_wallStartPos;
+    private SelectableObj[] m_sObjs;
 
     void Start() {
         m_wallStartPos = wallTrans.position;
+
+        // Initialize selection object id
+        m_sObjs = selectionGroup.GetComponentsInChildren<SelectableObj>();
+        for( int i = 0; i < m_sObjs.Length; i++ )
+            m_sObjs[i].id = i;
+
+        selectedId = defaultPos.id;
+
+        heartObj.transform.position = defaultPos.transform.position;
     }
 
     void Update() {
@@ -47,10 +58,9 @@ public class Level1_1 : BaseScn {
 
 
     private void CheckResult() {
-        var answer = answers.FirstOrDefault( a => a.selectionId == selectedId );
+        var answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
 
-
-        if( answer == null ) {
+        if( answer.isNotAnswer ) {
             m_isRestarting = true;
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
@@ -58,7 +68,10 @@ public class Level1_1 : BaseScn {
         }
         else {
             m_isGameOver = true;
-            AudioMng.PlayOneShot( answer.clip );
+
+            if( answer.selectionData.clip != null )
+                AudioMng.PlayOneShot( answer.selectionData.clip );
+
             StartCoroutine( EndGameDelay() );
         }
     }

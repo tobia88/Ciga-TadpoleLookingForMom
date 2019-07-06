@@ -189,11 +189,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
   wallMoveSpd: -0.5
-  targetY: -2.97
+  targetY: -2
   wallTrans: {fileID: 1717557846880146812}
   defaultPos: {fileID: 0}
   selectedId: 0
   heartObj: {fileID: 290497143162684480}
+  matchAnimState: 0
   selectionGroup: {fileID: 234676758123958376}
 --- !u!1 &5210696925201851813
 GameObject:

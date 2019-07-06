@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using DG.Tweening;
+using System;
 
 public class Level1_1 : BaseScn {
+    public static event Action<bool> onLevelComplete;
     public float wallMoveSpd = -10f;
     public float targetY = -5f;
     public Transform wallTrans;
@@ -34,15 +36,12 @@ public class Level1_1 : BaseScn {
     }
 
     void Update() {
-        if( PhaseState != PhaseStates.Playing )
+        if( PhaseState != PhaseStates.Playing || m_isGameOver )
             return;
 
         if( !m_isRestarting ) {
             // Wall Moving
             wallTrans.Translate( Vector2.up * wallMoveSpd * Time.deltaTime );
-
-            if( m_isGameOver )
-                return;
 
             // Only check result before game over
             if( wallTrans.position.y <= targetY ) {
@@ -68,7 +67,12 @@ public class Level1_1 : BaseScn {
     protected virtual void CheckResult() {
         var answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
 
-        if( CheckMatch( answer )) {
+        bool result = CheckMatch( answer );
+
+        if( onLevelComplete != null )
+            onLevelComplete( result );
+
+        if( !result ) {
             m_isRestarting = true;
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
@@ -95,7 +99,7 @@ public class Level1_1 : BaseScn {
     }
 
     private IEnumerator EndGameDelay() {
-        yield return new WaitForSeconds( 5 );
+        yield return new WaitForSeconds( 2 );
         PhaseState = PhaseStates.End;
     }
 }

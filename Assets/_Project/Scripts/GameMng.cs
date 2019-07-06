@@ -90,7 +90,7 @@ public class GameMng: MonoBehaviour {
         baseScn = Instantiate( currentPhase.scenes[level] );
 
         // Show Theme Sprite if phase changed
-        if( phaseChanged )
+        if( phaseChanged && currentPhase.themeSpr != null )
             ThemeTransition.FadeOutWithNewPhase( currentPhase.themeSpr );
         else
             ThemeTransition.FadeOut();

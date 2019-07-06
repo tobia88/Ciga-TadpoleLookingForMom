@@ -10,8 +10,8 @@ public class YSort : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( sprite != null ) {
-            sprite.sortingOrder = Mathf.FloorToInt( -transform.position.y + offset );
-        }
+        // if( sprite != null ) {
+        //     sprite.sortingOrder = Mathf.FloorToInt( -transform.position.y + offset );
+        // }
     }
 }

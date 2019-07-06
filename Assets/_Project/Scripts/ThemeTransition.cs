@@ -20,13 +20,17 @@ public class ThemeTransition: MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    public static void FadeOut( Sprite spr ) {
+    public static void FadeOutWithNewPhase( Sprite spr ) {
         m_inst.uiImg.sprite = spr;
-        m_inst.animator.SetBool( "OnShow", true );
+        m_inst.animator.SetTrigger( "FadeOutWithPhase" );
+    }
+
+    public static void FadeOut() {
+        m_inst.animator.SetTrigger( "FadeOut" );
     }
 
     public static void FadeIn() {
-        m_inst.animator.SetBool( "OnShow", false );
+        m_inst.animator.SetTrigger( "FadeIn" );
     }
 
     public void OnFadeInFinish() {

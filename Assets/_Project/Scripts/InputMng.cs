@@ -47,5 +47,9 @@ public class InputMng: MonoBehaviour {
         
         // Debug Hotkeys
         Time.timeScale = ( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKey( KeyCode.Alpha1 ) ) ? 2 : 1;
+
+        if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKey( KeyCode.Alpha2 ) ) {
+            GameMng.Inst.baseScn.PhaseState = BaseScn.PhaseStates.End;
+        }
     }
 }

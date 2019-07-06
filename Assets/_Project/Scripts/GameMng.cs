@@ -22,6 +22,10 @@ public class GameMng: MonoBehaviour {
     //     }
     // }
 
+    public static GameMng Inst {
+        get { return m_inst; }
+    }
+
     void OnEnable() {
         BaseScn.onPhaseStateChanged += OnBaseScnPhaseStateChanged;
         ThemeTransition.onFadeOutFinish += OnTransitFadeOutFinish;
@@ -36,14 +40,17 @@ public class GameMng: MonoBehaviour {
         m_inst = this;
     }
 
+    [HideInInspector]
     public PhaseData currentPhase;
     [HideInInspector]
     public BaseScn baseScn; 
+    [HideInInspector]
+    public int phase, level;
 
     void Start() {
-        currentPhase = PhaseData.All[0];
-        baseScn = Instantiate( currentPhase.scenes[0] );
-        ThemeTransition.FadeOut( currentPhase.themeSpr );
+        phase = 0;
+        level = 0;
+        InitLevel( true );
     }
 
     private void OnTransitFadeOutFinish() {
@@ -52,7 +59,36 @@ public class GameMng: MonoBehaviour {
 
     private void OnTransitFadeInFinish() {
         Destroy( baseScn.gameObject );
+
         Debug.Log( "Next Level" );
+        level++;
+
+        var phaseChanged = false;
+
+        if( level >= currentPhase.scenes.Length ) {
+            phaseChanged = true;
+
+            Debug.Log( "Enter next phase" );
+            phase++;
+
+            if( phase >= PhaseData.All.Length ) {
+                Debug.Log( "Game Finished" );
+                return;
+            }
+        }
+
+        InitLevel( phaseChanged );
+    }
+
+    private void InitLevel( bool phaseChanged ) {
+        currentPhase = PhaseData.All[phase];
+        baseScn = Instantiate( currentPhase.scenes[level] );
+
+        // Show Theme Sprite if phase changed
+        if( phaseChanged )
+            ThemeTransition.FadeOutWithNewPhase( currentPhase.themeSpr );
+        else
+            ThemeTransition.FadeOut();
     }
 
     private void OnBaseScnPhaseStateChanged( BaseScn.PhaseStates phase ) {

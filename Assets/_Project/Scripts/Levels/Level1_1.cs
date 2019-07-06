@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using DG.Tweening;
 
 public class Level1_1 : BaseScn {
@@ -9,7 +10,7 @@ public class Level1_1 : BaseScn {
     public Transform wallTrans;
     [HideInInspector]
     public int selectedId;
-    public int correctId;
+    public SelectionData[] answers;
     public GameObject heartObj;
 
     private bool m_isRestarting;
@@ -46,7 +47,7 @@ public class Level1_1 : BaseScn {
 
 
     private void CheckResult() {
-        bool result = selectedId == correctId;
+        bool result = answers.Any( a => a.selectionId == selectedId );
 
         Debug.Log( "Result: " + result );
 

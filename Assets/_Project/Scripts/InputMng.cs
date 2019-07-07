@@ -8,17 +8,18 @@ public class InputMng: MonoBehaviour {
     public static event Action<BaseSelector> onClickObj;
     public int frameIntervalForClick = 10;
     private bool m_mp;
-    private Vector3 m_startPos, m_lastPos, m_pos, m_delta;
     private int clickTick;
     private List<Collider2D> m_lastSelectedObjs = new List<Collider2D>();
 
     void Update() {
         clickTick--;
 
+        if( Camera.main == null )
+            return;
+
         // Mouse Movement
         if( Input.GetMouseButtonDown( 0 ) ) {
             m_mp = true;
-            m_startPos = m_pos = m_lastPos = Input.mousePosition;
             clickTick = frameIntervalForClick;
         }
         else if (Input.GetMouseButtonUp( 0 ) ){
@@ -37,11 +38,7 @@ public class InputMng: MonoBehaviour {
        }
 
         if( m_mp ) {
-            m_lastPos = m_pos;
-            m_pos = Input.mousePosition;
-            m_delta = m_pos - m_lastPos;
-
-            var wp = Camera.main.ScreenToWorldPoint( m_pos );
+            var wp = Camera.main.ScreenToWorldPoint( Input.mousePosition );
             var cols = Physics2D.OverlapPointAll( wp, 1 << LayerMask.NameToLayer( "TouchObject" ));
 
             if( cols != null ) {

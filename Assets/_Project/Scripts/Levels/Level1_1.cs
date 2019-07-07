@@ -6,9 +6,6 @@ using DG.Tweening;
 using System;
 
 public class Level1_1 : BaseScn {
-    public static event Action<bool> onLevelComplete;
-    public float wallMoveSpd = -10f;
-    public float targetY = -5f;
     public Transform wallTrans;
     public SelectableObj defaultPos;
     [HideInInspector]
@@ -23,7 +20,7 @@ public class Level1_1 : BaseScn {
     private SelectableObj[] m_sObjs;
 
     void Start() {
-        m_wallStartPos = wallTrans.position;
+        m_wallStartPos = wallTrans.position = Vector3.up * WALL_START_Y;
 
         // Initialize selection object id
         m_sObjs = selectionGroup.GetComponentsInChildren<SelectableObj>();
@@ -33,7 +30,7 @@ public class Level1_1 : BaseScn {
         selectedId = defaultPos.id;
 
         heartObj.transform.position = defaultPos.transform.position;
-    }
+    } 
 
     void Update() {
         if( PhaseState != PhaseStates.Playing || m_isGameOver )
@@ -41,10 +38,10 @@ public class Level1_1 : BaseScn {
 
         if( !m_isRestarting ) {
             // Wall Moving
-            wallTrans.Translate( Vector2.up * wallMoveSpd * Time.deltaTime );
+            wallTrans.Translate( Vector2.up * WALL_MOVE_SPD * Time.deltaTime );
 
             // Only check result before game over
-            if( wallTrans.position.y <= targetY ) {
+            if( wallTrans.position.y <= WALL_TARGET_Y ) {
                 CheckResult();
             }
         }
@@ -82,6 +79,8 @@ public class Level1_1 : BaseScn {
 
             AudioMng.PlayOneShot( answer.selectionData.clip );
 
+            GameData.LevelSkip = answer.levelSkip;
+
             StartCoroutine( EndGameDelay() );
         }
     }
@@ -91,8 +90,10 @@ public class Level1_1 : BaseScn {
             return false;
 
         if( matchAnimState ) {
-            var clickToChangeState = heartObj.GetComponent<ClickToChangeState>();
-            return clickToChangeState != null && clickToChangeState.IsEndState;
+            var clickToChangeState = heartObj.GetComponentInChildren<ClickToChangeState>();
+
+            if( clickToChangeState == null || !clickToChangeState.IsEndState )
+                return false;
         }
 
         return true;

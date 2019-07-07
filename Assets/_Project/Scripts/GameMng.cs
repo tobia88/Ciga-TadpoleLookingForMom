@@ -65,7 +65,10 @@ public class GameMng: MonoBehaviour {
         Destroy( baseScn.gameObject );
 
         Debug.Log( "Next Level" );
-        level++;
+        level += GameData.LevelSkip + 1;
+
+        // Always reset level skip
+        GameData.LevelSkip = 0;
 
         var phaseChanged = false;
 

@@ -192,5 +192,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1680840664952817255, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2da73ad5dc834e4cb9aacff632fa245, type: 3}

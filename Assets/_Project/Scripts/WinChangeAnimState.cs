@@ -8,11 +8,11 @@ public class WinChangeAnimState: MonoBehaviour {
         m_anim = GetComponent<Animator>();
     }
     void OnEnable() {
-        Level1_1.onLevelComplete += OnLevelComplete;
+        BaseScn.onLevelComplete += OnLevelComplete;
     }
 
     void OnDisable() {
-        Level1_1.onLevelComplete -= OnLevelComplete;
+        BaseScn.onLevelComplete -= OnLevelComplete;
     }
 
     private void OnLevelComplete( bool result ) {

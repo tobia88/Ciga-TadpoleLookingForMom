@@ -4,6 +4,13 @@ using UnityEngine;
 using System;
 
 public class BaseScn: MonoBehaviour {
+    public const float WALL_MOVE_SPD = -0.5f;
+    public const float WALL_TARGET_Y = -2f;
+    public const float WALL_START_Y = 5f;
+
+    public static Action<bool> onLevelComplete;
+    public static Action<PhaseStates> onPhaseStateChanged;
+
     public enum PhaseStates {
         Null,
         Start,
@@ -11,10 +18,19 @@ public class BaseScn: MonoBehaviour {
         End
     }
 
-    public static event Action<PhaseStates> onPhaseStateChanged;
 
     public static BaseScn Create( int phase, int level ) {
-        var format = string.Format( "{0}_{1}", phase, level );
+        string format = null;
+
+        if( GameData.LevelSkip >= 0 ) {
+            // Enter flag scene only once
+            format = string.Format( "{0}_{1}_{2}", phase, level, GameData.LevelSkip );
+            GameData.LevelSkip = -1;
+        }
+        else {
+            format = string.Format( "{0}_{1}", phase, level );
+        }
+
         Debug.Log( "Load Level: " + format );
         var rsc = Resources.Load<BaseScn>( format );
         Instantiate( rsc );

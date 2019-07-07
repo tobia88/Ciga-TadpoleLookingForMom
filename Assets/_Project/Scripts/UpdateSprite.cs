@@ -8,11 +8,11 @@ public class UpdateSprite : MonoBehaviour
     public Sprite targetSprite;
 
     void OnEnable() {
-        Level1_1.onLevelComplete += OnLevelComplete;
+        BaseScn.onLevelComplete += OnLevelComplete;
     }
 
     void OnDisable() {
-        Level1_1.onLevelComplete -= OnLevelComplete;
+        BaseScn.onLevelComplete -= OnLevelComplete;
     }
 
     private void OnLevelComplete( bool result ) {

@@ -11,4 +11,5 @@ public class SelectableObj: BaseSelector {
     public int id = 0;
     public SelectionData selectionData;
     public bool isNotAnswer;
+    public int levelSkip = 0;
 }

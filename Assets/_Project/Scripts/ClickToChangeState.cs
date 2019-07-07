@@ -20,7 +20,7 @@ public class ClickToChangeState: BaseSelector {
         {
             value = Mathf.Clamp( value, 0, endState );
 
-            Debug.Log( "State: " + value );
+            Debug.Log( "State: " + value + ", Is End State: " + IsEndState );
 
             if( value != m_currentState ) {
                 m_currentState = value;
@@ -38,7 +38,6 @@ public class ClickToChangeState: BaseSelector {
     }
 
     private void OnClickObj( BaseSelector selector ) {
-        Debug.Log( "On Click" );
         if( selector.gameObject == gameObject ) {
             CurrentState++;
         }

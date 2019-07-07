@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   phaseId: 2
-  themeSpr: {fileID: 21300000, guid: 7b89242491ff64d4fb762aa8fb787cec, type: 3}
+  themeSpr: {fileID: 21300000, guid: 3cab9f3fedc7a52468836533612c65a6, type: 3}

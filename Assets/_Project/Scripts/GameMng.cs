@@ -77,12 +77,10 @@ public class GameMng: MonoBehaviour {
 
             Debug.Log( "Enter next phase" );
             phase++;
-            level = 0;
 
-            if( phase >= PhaseData.All.Length ) {
-                Debug.Log( "Game Finished" );
-                return;
-            }
+            // Loop Phase
+            phase %= PhaseData.All.Length;
+            level = 0;
         }
 
         InitLevel( phaseChanged );

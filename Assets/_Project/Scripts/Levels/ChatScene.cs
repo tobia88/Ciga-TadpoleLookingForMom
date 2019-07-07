@@ -150,6 +150,9 @@ public class ChatScene : BaseScn {
 
         GameData.LevelSkip = answer.levelSkip;
 
+        //FIXME: I need the true symbol!
+        GameData.SymbolSprites.Add( null );
+
         StartCoroutine( EndGameDelay() );
     }
 

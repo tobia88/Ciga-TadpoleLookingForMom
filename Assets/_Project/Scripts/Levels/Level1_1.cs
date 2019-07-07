@@ -81,6 +81,8 @@ public class Level1_1 : BaseScn {
 
             GameData.LevelSkip = answer.levelSkip;
 
+            GameData.SymbolSprites.Add( answer.selectionData.symbolSpr );
+
             StartCoroutine( EndGameDelay() );
         }
     }

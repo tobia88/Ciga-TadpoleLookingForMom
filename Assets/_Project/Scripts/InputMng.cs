@@ -72,5 +72,9 @@ public class InputMng: MonoBehaviour {
         if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKeyDown( KeyCode.Alpha2 ) ) {
             GameMng.Inst.baseScn.PhaseState = BaseScn.PhaseStates.End;
         }
+
+        if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKeyDown( KeyCode.R ) ) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene( 0 );
+        }
     }
 }

@@ -13,6 +13,9 @@ public class StartScene: BaseScn {
     private bool m_input;
 
     void Start() {
+        GameData.LevelSkip = 0;
+        GameData.SymbolSprites.Clear();
+
         StartCoroutine( TestRoutine() );
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using DG.Tweening;
+using Thinksquirrel.CShake;
 using System;
 
 public class Level1_1 : BaseScn {
@@ -79,6 +80,8 @@ public class Level1_1 : BaseScn {
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
                      .OnComplete( () => m_isRestarting = false );
+
+            CameraShake.ShakeAll();
         } else {
             GameOver();
         }

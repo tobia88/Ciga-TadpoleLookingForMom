@@ -16,10 +16,13 @@ public class Level1_1 : BaseScn {
 
     private bool m_isRestarting;
     private bool m_isGameOver;
+    private SelectableObj m_answer;
     private Vector3 m_wallStartPos;
     private SelectableObj[] m_sObjs;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
+
         m_wallStartPos = wallTrans.position = Vector3.up * WALL_START_Y;
 
         // Initialize selection object id
@@ -30,7 +33,7 @@ public class Level1_1 : BaseScn {
         selectedId = defaultPos.id;
 
         heartObj.transform.position = defaultPos.transform.position;
-    } 
+    }
 
     void Update() {
         if( PhaseState != PhaseStates.Playing || m_isGameOver )
@@ -47,7 +50,7 @@ public class Level1_1 : BaseScn {
         }
     }
 
-    protected override void OnSelectObj(BaseSelector obj) {
+    protected override void OnSelectObj( BaseSelector obj ) {
         if( PhaseState != PhaseStates.Playing )
             return;
 
@@ -62,12 +65,14 @@ public class Level1_1 : BaseScn {
 
 
     protected virtual void CheckResult() {
-        var answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
+        m_answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
 
-        bool result = CheckMatch( answer );
+        bool result = CheckMatch( m_answer );
 
         if( onLevelComplete != null )
             onLevelComplete( result );
+
+        AudioMng.PlayOneShot( m_answer.selectionData.clip );
 
         if( !result ) {
             m_isRestarting = true;
@@ -75,16 +80,25 @@ public class Level1_1 : BaseScn {
                      .SetEase( Ease.OutQuad )
                      .OnComplete( () => m_isRestarting = false );
         } else {
-            m_isGameOver = true;
-
-            AudioMng.PlayOneShot( answer.selectionData.clip );
-
-            GameData.LevelSkip = answer.levelSkip;
-
-            GameData.SymbolSprites.Add( answer.selectionData.symbolSpr );
-
-            StartCoroutine( EndGameDelay() );
+            GameOver();
         }
+    }
+
+    protected override void GameOver() {
+        base.GameOver();
+
+        m_isGameOver = true;
+
+        GameData.LevelSkip = m_answer.levelSkip;
+
+        GameData.SymbolSprites.Add( m_answer.selectionData.symbolSpr );
+
+        var anim = heartObj.GetComponentInChildren<Animator>();
+
+        if( anim != null )
+            anim.enabled = true;
+
+        StartCoroutine( EndGameDelay() );
     }
 
     private bool CheckMatch( SelectableObj answer ) {

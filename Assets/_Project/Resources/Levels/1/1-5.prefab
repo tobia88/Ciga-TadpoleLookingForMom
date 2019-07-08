@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: isNotAnswer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80,6 +85,18 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
+--- !u!114 &4079885866161602734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1540285435380106648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37194bffeabe99145b6dda6ee89f87c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3638111062731326847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,6 +189,17 @@ PrefabInstance:
       propertyPath: isNotAnswer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ec07e75c5a191f4ba1cf0d7f9ba2c24,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -252,6 +280,11 @@ PrefabInstance:
       propertyPath: isNotAnswer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,18 +348,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
---- !u!114 &7012357269101941699 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 5525492526360434421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37194bffeabe99145b6dda6ee89f87c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5871157019843016396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,6 +365,11 @@ PrefabInstance:
       propertyPath: isNotAnswer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -563,7 +589,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultPos
       value: 
-      objectReference: {fileID: 7012357269101941699}
+      objectReference: {fileID: 4079885866161602734}
     - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: targetY

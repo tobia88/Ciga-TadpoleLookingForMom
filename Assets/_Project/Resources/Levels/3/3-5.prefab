@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3238373284894386584, guid: faac49d34312a7645891288573309605,
+  m_Sprite: {fileID: 3602943029676394598, guid: faac49d34312a7645891288573309605,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -89,7 +89,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352677019448448294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 12767aadec5a7b241b8ac49b1ad49dd0, type: 2}
   m_CullingMode: 0
@@ -122,6 +122,17 @@ PrefabInstance:
       propertyPath: flag
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9759cc31b032b7546aef1f31c960ed64, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 52e5493c140f4ee4db328cfbe98ab4e8,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,8 +202,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3238373284894386584, guid: faac49d34312a7645891288573309605,
+      objectReference: {fileID: 3602943029676394598, guid: faac49d34312a7645891288573309605,
         type: 3}
+    - target: {fileID: 3314257783980361015, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
 --- !u!114 &4079885866161602734 stripped
@@ -229,6 +245,17 @@ PrefabInstance:
       propertyPath: flag
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 98e492ad8d9f55244873930242a25c87, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: c6e7af7038f59e54ca800ba5a235e54e,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,8 +325,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3238373284894386584, guid: faac49d34312a7645891288573309605,
+      objectReference: {fileID: 3602943029676394598, guid: faac49d34312a7645891288573309605,
         type: 3}
+    - target: {fileID: 3314257783980361015, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
 --- !u!1001 &4978944621116907823
@@ -319,6 +351,17 @@ PrefabInstance:
       propertyPath: flag
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ed9bc01794897924485792455de0ecaa, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fe638673c920884fb66d78c3d04c1b2,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -388,8 +431,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3238373284894386584, guid: faac49d34312a7645891288573309605,
+      objectReference: {fileID: 3602943029676394598, guid: faac49d34312a7645891288573309605,
         type: 3}
+    - target: {fileID: 3314257783980361015, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
 --- !u!1001 &5525492526360434421
@@ -409,6 +457,17 @@ PrefabInstance:
       propertyPath: flag
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b01682d09946c3e428bf8e62a49280bd, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fa33f4832330814e9a583d899993b91,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -478,8 +537,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3238373284894386584, guid: faac49d34312a7645891288573309605,
+      objectReference: {fileID: 3602943029676394598, guid: faac49d34312a7645891288573309605,
         type: 3}
+    - target: {fileID: 3314257783980361015, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
 --- !u!1001 &7277585728926354106
@@ -631,6 +695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
+      propertyPath: ambients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
       propertyPath: defaultId
       value: 1
       objectReference: {fileID: 0}
@@ -639,6 +708,26 @@ PrefabInstance:
       propertyPath: defaultPos
       value: 
       objectReference: {fileID: 4079885866161602734}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: ambients.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: ambients.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: ambients.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fa7025b16a680de4da7f07aef89e32d9, type: 3}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: ambients.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1717557846880146812, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: m_LocalPosition.y

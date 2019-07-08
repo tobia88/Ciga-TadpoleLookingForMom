@@ -27,6 +27,17 @@ PrefabInstance:
       propertyPath: levelSkip
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ed3c8d1c616bea47947d8e9c5baeb07,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,6 +140,17 @@ PrefabInstance:
       propertyPath: levelSkip
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4357f9fdf597560429e51e5246509859,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -214,6 +236,17 @@ PrefabInstance:
       propertyPath: levelSkip
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f6e0e09a14f426468dda899fd67ce83,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x

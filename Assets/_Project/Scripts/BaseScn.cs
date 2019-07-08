@@ -10,6 +10,7 @@ public class BaseScn: MonoBehaviour {
 
     public static Action<bool> onLevelComplete;
     public static Action<PhaseStates> onPhaseStateChanged;
+    public Sound[] ambients;
 
     public enum PhaseStates {
         Null,
@@ -52,6 +53,13 @@ public class BaseScn: MonoBehaviour {
         }
     }
 
+    protected virtual void Start() {
+        foreach( var a in ambients )
+            AudioMng.Play( a );
+    }
+
+    protected virtual void GameOver() { }
+
     void OnEnable() {
         InputMng.onSelectObj += OnSelectObj;
     }
@@ -72,6 +80,11 @@ public class BaseScn: MonoBehaviour {
 
         if( m_phaseState == PhaseStates.Start ) {
             PhaseState = PhaseStates.Playing;
+        }
+
+        if( m_phaseState == PhaseStates.End ) {
+            foreach( var a in ambients )
+                AudioMng.Stop( a );
         }
     }
 

@@ -7,7 +7,7 @@ public class CreditScene: BaseScn {
     public PlayableDirector director;
     public SymbolGroup symbolGroup;
 
-    void Start() {
+    protected override void Start() {
         var sprites =  GameData.SymbolSprites;
         symbolGroup.Init( sprites.ToArray() );
 

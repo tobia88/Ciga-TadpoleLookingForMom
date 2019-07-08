@@ -29,7 +29,7 @@ public class AudioMng: MonoBehaviour {
 
     public static Dictionary<AudioClip, AudioSource> sources = new Dictionary<AudioClip, AudioSource>();
 
-    void Awake() {
+    void Start() {
         m_inst = this;
     }
 
@@ -38,6 +38,9 @@ public class AudioMng: MonoBehaviour {
             return;
 
         AudioSource src = GetSource( _snd );
+
+        if( src == null )
+            return;
 
         if( src.isPlaying && !_forceReplay )
             return;

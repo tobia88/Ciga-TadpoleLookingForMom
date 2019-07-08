@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMng
       objectReference: {fileID: 0}
+    - target: {fileID: 4329589221733794320, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4329589221733794321, guid: f2da73ad5dc834e4cb9aacff632fa245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,5 +203,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8dc86b063f766ce4b92512ae309202d9,
         type: 3}
+    - target: {fileID: 4329589221733794326, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: bgm.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bc806e2057f6d2c4fb18b051c6ddf927, type: 3}
+    - target: {fileID: 4329589221733794326, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: bgm.loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329589221733794326, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: bgm.volume
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245542341584374604, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245542341584374604, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245542341584374604, guid: f2da73ad5dc834e4cb9aacff632fa245,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2da73ad5dc834e4cb9aacff632fa245, type: 3}

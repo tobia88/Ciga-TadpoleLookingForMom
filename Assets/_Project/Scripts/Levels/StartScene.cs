@@ -8,11 +8,12 @@ public class StartScene: BaseScn {
     public PlayableDirector waitInputDirector;
     public PlayableDirector endInputDirector;
 
-    public BaseSelector startObj;
+    public SelectableObj startObj;
+    public Sound startGameSnd;
 
     private bool m_input;
 
-    void Start() {
+    protected override void Start() {
         GameData.LevelSkip = 0;
         GameData.SymbolSprites.Clear();
 
@@ -32,6 +33,10 @@ public class StartScene: BaseScn {
 
         endInputDirector.Play();
         yield return new WaitUntil( () => endInputDirector.time >= endInputDirector.duration );
+
+        AudioMng.Play( startGameSnd );
+
+        GameData.SymbolSprites.Add( startObj.selectionData.symbolSpr );
 
         PhaseState = PhaseStates.End;
     }

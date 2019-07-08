@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 
 public class InputMng: MonoBehaviour {
+    private static InputMng m_inst;
     public static event Action<BaseSelector> onSelectObj;
     public static event Action<BaseSelector> onClickObj;
     public int frameIntervalForClick = 10;
@@ -11,11 +12,16 @@ public class InputMng: MonoBehaviour {
     private int clickTick;
     private List<Collider2D> m_lastSelectedObjs = new List<Collider2D>();
 
+    void Awake() {
+        m_inst = this;
+    }
+
+    public static void Reset() {
+        m_inst.m_lastSelectedObjs.Clear();
+    }
+
     void Update() {
         clickTick--;
-
-        if( Camera.main == null )
-            return;
 
         // Mouse Movement
         if( Input.GetMouseButtonDown( 0 ) ) {
@@ -28,6 +34,9 @@ public class InputMng: MonoBehaviour {
             if( clickTick > 0 && m_lastSelectedObjs != null ) {
                 if( onClickObj != null ) {
                     foreach( var c in m_lastSelectedObjs ) {
+                        if( c == null )
+                            continue;
+
                         onClickObj( c.GetComponent<BaseSelector>() );
                     }
                 }
@@ -66,15 +75,18 @@ public class InputMng: MonoBehaviour {
 
         // Debug Hotkeys
         // Speedup
-        Time.timeScale = ( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKey( KeyCode.Alpha1 ) ) ? 4 : 1;
+        Time.timeScale = ( Input.GetKey( KeyCode.LeftShift ) && Input.GetKey( KeyCode.Alpha1 ) ) ? 4 : 1;
 
         // Skip current level
-        if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKeyDown( KeyCode.Alpha2 ) ) {
+        if( Input.GetKey( KeyCode.LeftShift ) && Input.GetKeyDown( KeyCode.Alpha2 ) ) {
             GameMng.Inst.baseScn.PhaseState = BaseScn.PhaseStates.End;
         }
 
-        if( Input.GetKey( KeyCode.LeftAlt ) && Input.GetKeyDown( KeyCode.R ) ) {
+        if( Input.GetKey( KeyCode.LeftShift ) && Input.GetKeyDown( KeyCode.R ) ) {
             UnityEngine.SceneManagement.SceneManager.LoadScene( 0 );
         }
+
+        if( Input.GetKeyDown( KeyCode.Escape ) )
+            Application.Quit();
     }
 }

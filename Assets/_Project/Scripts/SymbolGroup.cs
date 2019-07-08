@@ -11,9 +11,6 @@ public class SymbolGroup : MonoBehaviour
 
     private SymbolPrefab[] m_prefabs;
 
-    void Start() {
-    }
-
     public void Init( Sprite[] sprites ) {
         m_prefabs = new SymbolPrefab[sprites.Length];
 

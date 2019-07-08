@@ -8,16 +8,30 @@ using System;
 using Random = UnityEngine.Random;
 
 [Serializable]
-public struct ChatDialogData {
+public class ChatDialogData {
     public int wallStateEffect;
     public Sprite[] sprites;
+    public Sound feedbackClip;
+
+    private int m_last;
 
     public Sprite GetRandomSpr() {
-        return sprites[Random.Range( 0, sprites.Length )];
+        var randIndex = Random.Range( 0, sprites.Length );
+
+        if( randIndex == m_last ) {
+            randIndex++;
+            randIndex %= sprites.Length;
+        }
+        
+        m_last = randIndex;
+
+        return sprites[m_last];
     }
 }
 
 public class ChatScene : BaseScn {
+    private SelectableObj m_answer;
+
     public SelectableObj defaultPos;
     [HideInInspector]
     public int selectedId;
@@ -34,6 +48,8 @@ public class ChatScene : BaseScn {
     public SpriteRenderer wallSpr;
     public Transform wallTrans;
     public Sprite[] wallStateSprites;
+    public Sprite successSymbol;
+    public Sprite breakupSymbol;
 
     public int WallState {
         get { return m_wallState; }
@@ -65,10 +81,13 @@ public class ChatScene : BaseScn {
 
     private bool m_isRestarting;
     private bool m_isGameOver;
+    private bool m_isWin;
     private Vector3 m_wallStartPos;
     private SelectableObj[] m_sObjs;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
+
         m_wallStartPos = wallTrans.position = Vector3.up * WALL_START_Y;
 
         // Initialize selection object id
@@ -116,42 +135,47 @@ public class ChatScene : BaseScn {
 
 
     protected virtual void CheckResult() {
-        var answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
+        m_answer = m_sObjs.FirstOrDefault( a => a.id == selectedId );
 
-        bool result = CheckMatch( answer );
+        m_isWin = CheckMatch( m_answer );
 
         WallState += dialogDatas[ChatDialogState].wallStateEffect;
 
+        chatDialogSpr.sprite = dialogDatas[m_chatDialogState].GetRandomSpr();
+
+        AudioMng.PlayOneShot( dialogDatas[ChatDialogState].feedbackClip );
+
         if( onLevelComplete != null )
-            onLevelComplete( result );
+            onLevelComplete( m_isWin );
 
         // End game if no more try
         m_tryLeft--;
 
         if( m_tryLeft <= 0 ) {
-            GameOver( answer );
+            GameOver();
             return;
         }
 
-        if( !result ) {
+        if( !m_isWin ) {
             m_isRestarting = true;
             wallTrans.DOMoveY( m_wallStartPos.y, 1f )
                      .SetEase( Ease.OutQuad )
                      .OnComplete( () => m_isRestarting = false );
         } else {
-            GameOver( answer );
+            GameOver();
         }
     }
 
-    private void GameOver( SelectableObj answer ) {
+    protected override void GameOver() {
         m_isGameOver = true;
 
-        AudioMng.PlayOneShot( answer.selectionData.clip );
+        AudioMng.PlayOneShot( m_answer.selectionData.clip );
 
-        GameData.LevelSkip = answer.levelSkip;
+        GameData.LevelSkip = m_answer.levelSkip;
 
         //FIXME: I need the true symbol!
-        GameData.SymbolSprites.Add( null );
+        GameData.SymbolSprites.Add( (m_isWin) ? successSymbol : breakupSymbol );
+        GameData.IsBreakup = !m_isWin;
 
         StartCoroutine( EndGameDelay() );
     }

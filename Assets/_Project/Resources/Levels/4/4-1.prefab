@@ -96,6 +96,12 @@ PrefabInstance:
       propertyPath: isNotAnswer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: c34cf0d0b0396bb449ae122e9e7509f1,
+        type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -161,6 +167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361015, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
@@ -336,6 +347,11 @@ PrefabInstance:
     - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: matchAnimState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467815986850170463, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: autoPlayAnim
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1717557846880146812, guid: 12d2e82dce14fa24d867d060f62b8a30,

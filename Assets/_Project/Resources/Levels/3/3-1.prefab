@@ -12,6 +12,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Place Holder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: b1228f6b899166548968161a6e5797c3,
+        type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +189,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: isNotAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,11 +260,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 4bf99e4163f85a244af8250ecba3885f,
         type: 3}
-    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
-        type: 3}
-      propertyPath: isNotAnswer
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f17effc1e4959348bd784e35d25a8f7, type: 3}
 --- !u!1001 &5525492526360434421
@@ -258,6 +274,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Place Holder (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 79fda8dd1b0bf534496e059ef40e00a1,
+        type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -425,11 +452,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3-1
       objectReference: {fileID: 0}
-    - target: {fileID: 1717557846880146812, guid: 12d2e82dce14fa24d867d060f62b8a30,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5210696924444171292, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -495,6 +517,11 @@ PrefabInstance:
       propertyPath: defaultPos
       value: 
       objectReference: {fileID: 7012357269101941699}
+    - target: {fileID: 1717557846880146812, guid: 12d2e82dce14fa24d867d060f62b8a30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 819409271618697428, guid: 12d2e82dce14fa24d867d060f62b8a30,
         type: 3}
       propertyPath: m_Sprite
@@ -533,6 +560,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Place Holder (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: c8e2c96ab03909c4ea75c41d1d3f3ed0,
+        type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -608,6 +646,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Place Holder (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.symbolSpr
+      value: 
+      objectReference: {fileID: 21300000, guid: 50a8782c5f14bfb44a4c610d170a83ca,
+        type: 3}
+    - target: {fileID: 3314257783980361014, guid: 1f17effc1e4959348bd784e35d25a8f7,
+        type: 3}
+      propertyPath: selectionData.clip.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
     - target: {fileID: 3314257783980361011, guid: 1f17effc1e4959348bd784e35d25a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x

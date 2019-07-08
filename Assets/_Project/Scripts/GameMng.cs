@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMng: MonoBehaviour {
+    public Sound bgm;
     private static GameMng m_inst;
 
     // public static GameMng Inst {
@@ -52,8 +53,12 @@ public class GameMng: MonoBehaviour {
     public int phase, level;
 
     void Start() {
+        Screen.SetResolution( 1920, 1080, FullScreenMode.FullScreenWindow );
+
         phase = 0;
         level = 0;
+
+        AudioMng.Play( bgm );
         InitLevel( true );
     }
 
@@ -87,6 +92,8 @@ public class GameMng: MonoBehaviour {
     }
 
     private void InitLevel( bool phaseChanged ) {
+        InputMng.Reset();
+
         currentPhase = PhaseData.All[phase];
         baseScn = Instantiate( currentPhase.scenes[level] );
 

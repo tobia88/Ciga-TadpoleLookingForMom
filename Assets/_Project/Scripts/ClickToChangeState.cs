@@ -30,11 +30,21 @@ public class ClickToChangeState: BaseSelector {
     }
 
     void OnEnable() {
-        InputMng.onClickObj += OnClickObj;
+        // InputMng.onClickObj += OnClickObj;
     }
 
     void OnDisable() {
-        InputMng.onClickObj -= OnClickObj;
+        // InputMng.onClickObj -= OnClickObj;
+    }
+
+    void Update() {
+        var scn = GetComponentInParent<BaseScn>();
+
+        if( scn == null || scn.PhaseState != BaseScn.PhaseStates.Playing )
+            return;
+
+        if( Input.GetMouseButtonDown( 0 ) ) 
+            CurrentState++;
     }
 
     private void OnClickObj( BaseSelector selector ) {

@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   selectionData:
-    symbolSpr: {fileID: 0}
+    symbolSpr: {fileID: 21300000, guid: b440d6cf2ad8a1741bc8a46416fbb7a1, type: 3}
     clip:
       clip: {fileID: 0}
       volume: 1
@@ -293,11 +293,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86d9a984c381540838873cbe9d3702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ambients: []
   gameMng: {fileID: 0}
   startDirector: {fileID: 6161238837910418600}
   waitInputDirector: {fileID: 3511782177974345754}
   endInputDirector: {fileID: 6847995416614198339}
   startObj: {fileID: 1862438849304573619}
+  startGameSnd:
+    clip: {fileID: 8300000, guid: 9142fa434a452a3438932a7454898e7c, type: 3}
+    volume: 1
+    pitch: 1
+    randomPitch: 0
+    loop: 0
+    minPitch: 0.995
+    maxPitch: 1.05
 --- !u!114 &5563620949095494401
 MonoBehaviour:
   m_ObjectHideFlags: 0

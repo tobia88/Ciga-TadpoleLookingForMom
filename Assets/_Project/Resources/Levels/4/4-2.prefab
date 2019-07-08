@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1497d75104232f944a868a33cde70c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ambients: []
   gameMng: {fileID: 0}
   defaultPos: {fileID: 4079885866161602734}
   selectedId: 0
@@ -53,17 +54,41 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e2b9d9e79fcdc6a45a65cb77e7f87241, type: 3}
     - {fileID: 21300000, guid: 9fbfedc76509ed94394bb312f74506a0, type: 3}
     - {fileID: 21300000, guid: c1d64fe4e1e0c534ea510d3442152a6e, type: 3}
+    feedbackClip:
+      clip: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
+      volume: 1
+      pitch: 1
+      randomPitch: 1
+      loop: 0
+      minPitch: 0.995
+      maxPitch: 1.05
   - wallStateEffect: -1
     sprites:
     - {fileID: 21300000, guid: b7fa784dfaa20ff4ba7482b5cc87b7b2, type: 3}
     - {fileID: 21300000, guid: 6eb2b257aa7588f4db39f95af4b3d3a6, type: 3}
     - {fileID: 21300000, guid: 67a3175e5155c524aa93f17898caff1b, type: 3}
+    feedbackClip:
+      clip: {fileID: 8300000, guid: 85318f61854e3d0489be3a376b451f6e, type: 3}
+      volume: 1
+      pitch: 1
+      randomPitch: 1
+      loop: 0
+      minPitch: 0.995
+      maxPitch: 1.05
   - wallStateEffect: 1
     sprites:
     - {fileID: 21300000, guid: 100b2b9718fa5ed4594c0c60829b5d7c, type: 3}
     - {fileID: 21300000, guid: 1c5b6e58c405eb14785e2c3c0564aa86, type: 3}
     - {fileID: 21300000, guid: 068be485c57511c429e3c24939eb1277, type: 3}
     - {fileID: 21300000, guid: dbf3f704a0cb86141b86a4c759972f05, type: 3}
+    feedbackClip:
+      clip: {fileID: 8300000, guid: cd73a405f9bb1a542a5996df717bfaf9, type: 3}
+      volume: 1
+      pitch: 1
+      randomPitch: 1
+      loop: 0
+      minPitch: 0.995
+      maxPitch: 1.05
   wallStartState: 1
   wallSpr: {fileID: 4673153526589644543}
   wallTrans: {fileID: 8835430406902925838}
@@ -72,6 +97,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cf3960ed8dbcd2b46806906232231ea7, type: 3}
   - {fileID: 21300000, guid: b1fde80f88186da41be9a15ccba7b79f, type: 3}
   - {fileID: 21300000, guid: 09728ebe14a093c49abb78a01b8658f4, type: 3}
+  successSymbol: {fileID: 21300000, guid: e8dca70674d47614d80a80e4fc2c2e23, type: 3}
+  breakupSymbol: {fileID: 21300000, guid: 44605e6676b671f4c8ad91e37dcb18a6, type: 3}
 --- !u!1001 &1540285435380106648
 PrefabInstance:
   m_ObjectHideFlags: 0

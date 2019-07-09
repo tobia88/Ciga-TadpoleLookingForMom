@@ -120,7 +120,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1411962517
+--- !u!1001 &53771772
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -186,31 +186,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903534317435244990, guid: 25734d41179ba114aae310d3e03c1ff7,
-        type: 3}
-      propertyPath: ambients.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903534317435244990, guid: 25734d41179ba114aae310d3e03c1ff7,
-        type: 3}
-      propertyPath: ambients.Array.data[0].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903534317435244990, guid: 25734d41179ba114aae310d3e03c1ff7,
-        type: 3}
-      propertyPath: ambients.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 050839b89a14f41479fdfee373e46d9c, type: 3}
-    - target: {fileID: 7903534317435244990, guid: 25734d41179ba114aae310d3e03c1ff7,
-        type: 3}
-      propertyPath: ambients.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7903534317435244990, guid: 25734d41179ba114aae310d3e03c1ff7,
-        type: 3}
-      propertyPath: ambients.Array.data[0].pitch
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25734d41179ba114aae310d3e03c1ff7, type: 3}
